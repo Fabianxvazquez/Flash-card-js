@@ -3,7 +3,10 @@ const nextButton = document.getElementById('next');
 const addButton = document.getElementById('add');
 const editButton = document.getElementById('edit');
 const deleteButton = document.getElementById('delete');
+// const SaveButton = document.getElementById('Submit')
 const form = document.querySelector('form');
+const cardContainer = document.querySelector('.card-container');
+
 form.setAttribute('hidden', '');
 
 answerButton.addEventListener('click', event => {});
@@ -17,6 +20,10 @@ addButton.addEventListener('click', event => {
 editButton.addEventListener('click', event => {});
 
 deleteButton.addEventListener('click', event => {});
+
+// SaveButton.addEventListener('click', event =>{
+//   onclick=doFunction(getCards);
+// });
 
 form.addEventListener('submit', e => {
   e.preventDefault();
@@ -34,9 +41,27 @@ form.addEventListener('submit', e => {
       [el.name]: el.value
     };
   }
-  console.log(values);
+
+  const card = values;
+  saveCard(card);
   form.setAttribute('hidden', '');
+  console.log(getCards());
 });
+
+function createCard(data) {
+  const div = document.createElement('div');
+  const span = document.createElement('span');
+  div.className = 'card';
+  div.innerText = data.question;
+  span.innerText = data.answer;
+
+  div.addEventListener('click', () => {
+    span.classList.toggle('hide')
+  })
+
+  div.appendChild(span);
+  cardContainer.appendChild(div);
+}
 
 function getCards() {
   const cards = localStorage.getItem('cards');
@@ -48,3 +73,7 @@ function saveCard(card) {
   const updated = [...cards, card];
   localStorage.setItem('cards', JSON.stringify(updated));
 }
+
+const cardDataArray = getCards();
+
+cardDataArray.forEach(data => createCard(data));

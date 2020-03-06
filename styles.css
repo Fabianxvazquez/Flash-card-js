@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   font-family: Gotham Rounded, sans-serif;
   font-weight: normal;
@@ -7,14 +9,14 @@
 body {
   padding: 0;
   margin: 0;
-  background: linear-gradient(to right, rgb(83, 197, 250), rgb(130, 247, 126))
+  background: linear-gradient(to right, rgb(83, 197, 250), rgb(130, 247, 126));
 }
 
-button{
+button {
   font-size: larger;
 }
 
-.container{
+.container {
   margin-top: 30px;
   display: flex;
   flex-direction: column;
@@ -37,7 +39,10 @@ button{
   margin-top: 15px;
 }
 
-
-h1{
+h1 {
   text-align: center;
+}
+
+.hide {
+  opacity: 0;
 }
