@@ -14,11 +14,30 @@ button{
   font-size: larger;
 }
 
-.index-card {
-  background-color: azure;
+.container{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.card {
   display: flex;
   justify-content: center;
-  align-content: center;
-  box-shadow: 4px 4px grey;
-  
+  align-items: center;
+  background: azure;
+  width: 500px;
+  height: 300px;
+  box-shadow: 4px 4px 5px 0px rgba(128, 128, 128, 0.199);
+}
+
+.input-buttons {
+  margin-top: 15px;
+}
+
+
+h1{
+  text-align: center;
 }
