@@ -16,11 +16,19 @@
     </div>
 
     <div class="input-buttons">
-      <button>Flip! to get the answer.</button>
-      <button>Next Card</button>
-      <button>Add Card</button>
-      <button>Edit Card</button>
-      <button>Delete Card</button>
+      <button id="answer">Flip! to get the answer</button>
+      <button id="next">Next Card</button>
+      <button id="add">Add Card</button>
+      <button id="edit">Edit Card</button>
+      <button id="delete">Delete Card</button>
+      <form hidden>
+        <label for="question">Question</label>
+        <input type="text" id="question" name="question">
+        <br>
+        <label for="answer">Answer</label>
+        <input type="text" id="answer" name="answer">
+        <button type="submit">Save</button>
+      </form>
     </div>
   </div>
     
